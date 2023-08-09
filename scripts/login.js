@@ -1,4 +1,4 @@
-console.log(`connected`);
+console.log(`connected to index.html`);
 let emailInput = document.querySelector('#emailInput');
 let passwordInput = document.querySelector('#passwordInput');
 
@@ -8,7 +8,6 @@ let usersContainer = [];
 if (localStorage.getItem('users') != null) {
   usersContainer = JSON.parse(localStorage.getItem('users'));
 }
-
 
 function validateEmail(email) {
   let regex = /^[a-zA-Z0-9]{1,}@[a-zA-Z]{2,}.[a-zA-z]{2,}$/;
@@ -39,10 +38,16 @@ function validatePassword(password) {
   }
 }
 
-
-
-
 function checkEmail() {
+  if (
+    validateEmail(emailInput.value) &&
+    validatePassword(passwordInput.value)
+  ) {
+    console.log('email and password ok');
+  } else {
+    return false;
+  }
+
   for (let i = 0; i < usersContainer.length; i++) {
     if (
       emailInput.value.toLowerCase() == usersContainer[i].email.toLowerCase()
@@ -52,12 +57,21 @@ function checkEmail() {
         passwordInput.value.toLowerCase() ==
         usersContainer[i].password.toLowerCase()
       ) {
-        console.log('matched passwords');
+        // console.log('matched passwords');
+        localStorage.setItem('logedUser', usersContainer[i].name);
+        window.location = './userpage.html';
+      } else {
+        document.getElementById('validation-error-msg').innerHTML =
+          'password not match';
       }
+    } else {
+      document.getElementById('validation-error-msg').innerHTML =
+        'email not registerd';
+      console.log('email not registerd');
     }
   }
-  clearForm();
-  console.log(`sry this email not regestired`);
+  // clearForm();
+  // console.log(`sry this email not regestired`);
 }
 
 function clearForm() {
