@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Login</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div
+      class="container vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="card p-4">
+        <h1>Smart Login System</h1>
+        <form>
+          <label for="emailInput"></label>
+          <input
+            type="email"
+            name="email"
+            id="emailInput"
+            class="form-control"
+            placeholder="Enter your Email : "
+          />
+
+          <label for="passwordInput"></label>
+          <input
+            type="password"
+            name="email"
+            id="passwordInput"
+            class="form-control"
+            placeholder="Enter your password : "
+          />
+          <p
+            id="validation-error-msg"
+            class="text-center text-danger mt-4 mb-0 d-none"
+          >
+            All inputs are Required
+          </p>
+          <a
+            href=""
+            class="btn btn-primary w-100 mt-4"
+            id="loginBtn"
+            role="button"
+            >login</a
+          >
+
+          <p class="text-center my-4">
+            Don't have an account?
+            <a href="signup.html" id="sign-up" class="link-success">Sign Up</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/login.js"></script>
+  </body>
+</html>

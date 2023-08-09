@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Login</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div
+      class="container vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="card p-4">
+        <h1>Smart Login System</h1>
+        <form>
+          <label for="nameInput"></label>
+          <input
+            type="text"
+            name="name"
+            id="nameInput"
+            class="form-control"
+            placeholder="Enter your Name : "
+          />
+
+          <p class="my-0 m-2 text-warning d-none" id="validationNameMsg">
+            sry not vaild name
+          </p>
+
+          <label for="emailInput"></label>
+          <input
+            type="email"
+            name="email"
+            id="emailInput"
+            class="form-control"
+            placeholder="Enter your Email : "
+          />
+
+          <label for="passwordInput"></label>
+          <input
+            type="password"
+            name="passwordInput"
+            id="passwordInput"
+            class="form-control"
+            placeholder="Enter your password : "
+          />
+          <p id="validation-msg" class="text-center text-danger my-4"></p>
+
+          <button
+            type="button"
+            id="registerBtn"
+            class="btn btn-success w-100 text-center"
+          >
+            Register
+          </button>
+
+          <p class="text-center my-4">
+            Don't have an account?
+            <a href="index.html" id="signUp" class="link-primary">Sign In</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/sweetalert2@11.js"></script>
+    <script src="scripts/signup.js"></script>
+  </body>
+</html>
