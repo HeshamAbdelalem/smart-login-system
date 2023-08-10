@@ -60,6 +60,7 @@ function checkEmail() {
         // console.log('matched passwords');
         localStorage.setItem('logedUser', usersContainer[i].name);
         window.location = './userpage.html';
+        return true;
       } else {
         document.getElementById('validation-error-msg').innerHTML =
           'password not match';
@@ -77,10 +78,6 @@ function checkEmail() {
 function clearForm() {
   emailInput.value = '';
   passwordInput.value = '';
-}
-
-function login() {
-  loginBtn.setAttribute('href', 'userpage.html');
 }
 
 loginBtn.addEventListener('click', checkEmail);
